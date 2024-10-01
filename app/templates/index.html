@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style/styleIndex.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 side-image">
+
+                    <!-------------      image     ------------->
+
+                    <!--<img src="images/Logo.jpg" alt="">-->
+                    <div class="text">
+                        <p>El reciclaje es un pasaporte hacia un futuro sostenible <i>- Ecobalance</i></p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 right">
+
+                    <div class="input-box">
+                        <form action="/login/acces-login" method="post">
+
+
+                            <header>Inicio de sesión</header>
+                            {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                            {% for category, message in messages %}
+                            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="close"></button>
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith %}
+                            <div class="input-field">
+                                <input type="text" class="input" id="email" required="" autocomplete="off"
+                                    name="txtUser">
+                                <label for="email">Usuario</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input" id="pass" required="" name="txtPassword" min="0"
+                                    max="9999" maxlength="4">
+                                <label for="pass">Contraseña</label>
+                            </div>
+                            <div class="input-field">
+
+                                <input type="submit" class="submit" value="Ingresa">
+                            </div>
+                            <div class="signin">
+                                <span>Aún no posees una cuenta? <a href="menu.html">Ingresa aquí</a></span>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
