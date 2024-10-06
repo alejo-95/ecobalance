@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoBalance</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../static/style/styleMenu.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <i class="bx bxl-codepen"></i>
+                <span>EcoBalance</span>
+            </div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <div class="user">
+            <img src="../static/images/images.jpg" alt="" class="user-img" />
+            <div>
+                <p class="bold">Hola</p>
+                <p>Admin</p>:
+            </div>
+        </div>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">Tablero</span>
+                </a>
+                <!-- <span class="tooltip">Dashboard</span> -->
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-shopping-bag"></i>
+                    <span class="nav-item">Productos</span>
+                </a>
+                <!-- <span class="tooltip">Products</span> -->
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-list-check"></i>
+                    <span class="nav-item">Categorias</span>
+                </a>
+                <!-- <span class="tooltip">Categories</span> -->
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-food-menu"></i>
+                    <span class="nav-item">Ordenes</span>
+                </a>
+                <!-- <span class="tooltip">Orders</span> -->
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-body"></i>
+                    <span class="nav-item">Clientes</span>
+                </a>
+                <!-- <span class="tooltip">Customers</span> -->
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-location-plus"></i>
+                    <span class="nav-item">Envios</span>
+                </a>
+                <!-- <span class="tooltip">Shipping</span> -->
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bx-cog"></i>
+                    <span class="nav-item">Configuración</span>
+                </a>
+                <!-- <span class="tooltip">Settings</span> -->
+            </li>
+            <li>
+                <a href="/logout">
+                    <i class="bx bx-log-out"></i>
+                    <span class="nav-item">Salir</span>
+                </a>
+                <!-- <span class="tooltip">Salir</span> -->
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <header>
+                <div class="container">
+                    <div class="header-content">
+                        <div class="logoMenu-container">
+                            <img src="../../static/images/Logo-Ecobalance.jpg" alt="Logo Ecobalance" class="logoMenu">
+                        </div>
+                        <div class="header-text">
+                            <h1>Acumula Ecopuntos</h1>
+                            <p>¡Gana puntos y obtén descuentos exclusivos!</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="container">
+                <div class="points-container">
+                    <h2>Tus Puntos Acumulados</h2>
+                    <div class="points" id="pointsDisplay">5,250</div>
+                    <p>¡Sigue acumulando para obtener más beneficios!</p>
+                </div>
+
+                <div class="carousel-container">
+                    <button class="carousel-arrow carousel-arrow-left" id="prevBtn">&lt;</button>
+                    <div class="carousel" id="carousel">
+                        <div class="card">
+                            <img src="../../static/images/Logo-Frisby.jpg" alt="Descuento en Frisby">
+                            <h3>20% de descuento en productos de Frisby</h3>
+                            <p class="card-description">Válido en productos seleccionados</p>
+                        </div>
+                        <div class="card">
+                            <img src="../../static/images/Logo-Zara.jpg" alt="Descuento en Zara">
+                            <h3>15% de descuento en productos de Zara</h3>
+                            <p class="card-description">Válido en productos seleccionados</p>
+                        </div>
+                        <div class="card">
+                            <img src="../../static/images/Logo-Movistar.jpg" alt="Descuento en Movistar">
+                            <h3>25% de descuento en productos de Movistar</h3>
+                            <p class="card-description">Válido en productos seleccionados</p>
+                        </div>
+                        <div class="card">
+                            <img src="../../static/images/Logo-D1.jpg" alt="Descuento en D1">
+                            <h3>10% de descuento en Compras Online</h3>
+                            <p class="card-description">En tiendas seleccionadas</p>
+                        </div>
+                    </div>
+                    <button class="carousel-arrow carousel-arrow-right" id="nextBtn">&gt;</button>
+                </div>
+
+                <div class="video-container">
+                    <h2>El reciclaje es un pasaporte hacia un futuro sostenible</h2>
+                    <video width="1080" height="607" autoplay muted loop>
+                        <source src="../../static/video/IcelandVideo.mp4" type="video/mp4">
+                        Tu navegador no soporta el tag de video.
+                    </video>
+                </div>
+
+                <div class="alternating-content">
+                    <div class="content-row">
+                        <div class="content-text">
+                            <h2>Beneficios Exclusivos</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <div class="content-image">
+                            <img src="../../static/images/beneficio-exclusivo.jpg" alt="Beneficios Exclusivos">
+                        </div>
+                    </div>
+                    <div class="content-row">
+                        <div class="content-text">
+                            <h2>Acumula Puntos Fácilmente</h2>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="content-image">
+                            <img src="../../static/images/acumula-puntos.jpg" alt="Acumula Puntos">
+                        </div>
+                    </div>
+                    <div class="content-row">
+                        <div class="content-text">
+                            <h2>Canjea Tus Recompensas</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <div class="content-image">
+                            <img src="../../static/images/recompensa.jpg" alt="Canjea Recompensas">
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer>
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <h2>Sobre Nosotros</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <div class="footer-section">
+                            <h2>Enlaces Rápidos</h2>
+                            <ul>
+                                <li><a href="#">Inicio</a></li>
+                                <li><a href="#">Cómo Funciona</a></li>
+                                <li><a href="#">Beneficios</a></li>
+                                <li><a href="#">Preguntas Frecuentes</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h2>Contacto</h2>
+                            <ul>
+                                <li>Email: info@ecobalance.com</li>
+                                <li>Teléfono: (123) 456-7890</li>
+                                <li>Dirección: Calle Principal 123, Ciudad</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2024 EcoBalance. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../../static/script/script.js"></script>
+</body>
+
+</html>

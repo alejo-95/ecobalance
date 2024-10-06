@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Lealtad - Puntos y Descuentos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: rgba(1, 112, 97, 0.937);
+            --primary-light: rgba(1, 112, 97, 0.1);
+            --text-color: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 20px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            flex-shrink: 0;
+        }
+
+        .logo {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .header-text {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .points-container {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 400px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .points-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .points {
+            font-size: 4rem;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            margin: 40px 0;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .card {
+            flex: 0 0 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-right: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-arrow:hover {
+            background-color: var(--primary-light);
+        }
+
+        .carousel-arrow-left {
+            left: 10px;
+        }
+
+        .carousel-arrow-right {
+            right: 10px;
+        }
+
+        .video-container {
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .alternating-content {
+            margin: 40px 0;
+        }
+
+        .content-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .content-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .content-text {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .content-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .content-row, .content-row:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .content-image {
+                margin-top: 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+            }
+
+            .logo-container {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="/placeholder.svg?height=100&width=100" alt="Logo del Programa de Lealtad" class="logo">
+                </div>
+                <div class="header-text">
+                    <h1>Programa de Lealtad</h1>
+                    <p>¡Gana puntos y obtén descuentos exclusivos!</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="points-container">
+            <h2>Tus Puntos Acumulados</h2>
+            <div class="points" id="pointsDisplay">5,250</div>
+            <p>¡Sigue acumulando para obtener más beneficios!</p>
+        </div>
+
+        <div class="carousel-container">
+            <button class="carousel-arrow carousel-arrow-left" id="prevBtn">&lt;</button>
+            <div class="carousel" id="carousel">
+                <div class="card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Descuento en Restaurantes">
+                    <h3>20% de descuento en Restaurantes</h3>
+                    <p>Válido en restaurantes seleccionados</p>
+                </div>
+                <div class="card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Descuento en Cines">
+                    <h3>2x1 en Entradas de Cine</h3>
+                    <p>Disfruta del mejor entretenimiento</p>
+                </div>
+                <div class="card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Descuento en Viajes">
+                    <h3>15% de descuento en Viajes</h3>
+                    <p>Explora nuevos destinos por menos</p>
+                </div>
+                <div class="card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Descuento en Compras">
+                    <h3>10% de descuento en Compras Online</h3>
+                    <p>En tiendas seleccionadas</p>
+                </div>
+            </div>
+            <button class="carousel-arrow carousel-arrow-right" id="nextBtn">&gt;</button>
+        </div>
+
+        <div class="video-container">
+            <h2>Descubre Cómo Funciona Nuestro Programa</h2>
+            <video width="720" height="405" controls>
+                <source src="/placeholder-video.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+        </div>
+
+        <div class="alternating-content">
+            <div class="content-row">
+                <div class="content-text">
+                    <h2>Beneficios Exclusivos</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="content-image">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Beneficios Exclusivos">
+                </div>
+            </div>
+            <div class="content-row">
+                <div class="content-text">
+                    <h2>Acumula Puntos Fácilmente</h2>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="content-image">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Acumula Puntos">
+                </div>
+            </div>
+            <div class="content-row">
+                <div class="content-text">
+                    <h2>Canjea Tus Recompensas</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="content-image">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Canjea Recompensas">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h2>Sobre Nosotros</h2>
+                    <p>Somos un programa de lealtad comprometido con ofrecer los mejores beneficios a nuestros usuarios.</p>
+                </div>
+                <div class="footer-section">
+                    <h2>Enlaces Rápidos</h2>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Cómo Funciona</a></li>
+                        <li><a href="#">Beneficios</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h2>Contacto</h2>
+                    <ul>
+                        <li>Email: info@programadelealtad.com</li>
+                        <li>Teléfono: (123) 456-7890</li>
+                        <li>Dirección: Calle Principal 123, Ciudad</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Programa de Lealtad. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animación de puntos
+        function animatePoints() {
+            let currentPoints = 0;
+            const targetPoints = 5250;
+            const duration = 2000; // 2 segundos
+            const interval = 20; // Actualizar cada 20ms
+            const increment = targetPoints / (duration / interval);
+            const pointsDisplay = document.getElementById('pointsDisplay');
+
+            const timer = setInterval(() => {
+                currentPoints += increment;
+                if (currentPoints >= targetPoints) {
+                    clearInterval(timer);
+                    currentPoints = targetPoints;
+                }
+                pointsDisplay.textContent = Math.round(currentPoints).toLocaleString();
+            }, interval);
+        }
+
+        // Carrusel infinito mejorado
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+        let cardWidth;
+        let carouselWidth;
+        let totalCards;
+
+        function setupCarousel() {
+            const cards = carousel.children;
+            totalCards = cards.length;
+            cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginRight);
+            carouselWidth = cardWidth * totalCards;
+
+            // Clonar todas las tarjetas y añadirlas al final
+            for (let i = 0; i < totalCards; i++) {
+                const clone = cards[i].cloneNode(true);
+                carousel.appendChild(clone);
+            }
+
+            // Ajustar el ancho del carrusel
+            carousel.style.width = `${carouselWidth * 2}px`;
+
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const offset = -currentIndex * cardWidth;
+            carousel.style.transform = `translateX(${offset}px)`;
+
+            // Si llegamos al final del conjunto original, reiniciar sin transición
+            if (currentIndex >= totalCards) {
+                setTimeout(() => {
+                    carousel.style.transition = 'none';
+                    currentIndex = 0;
+                    updateCarousel();
+                    setTimeout(() => {
+                        carousel.style.transition = 'transform 0.5s ease';
+                    }, 50);
+                }, 500);
+            }
+        }
+
+        function nextSlide() {
+            currentIndex++;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            if (currentIndex === 0) {
+                currentIndex = totalCards - 1;
+                carousel.style.transition = 'none';
+                updateCarousel();
+                setTimeout(() => {
+                    carousel.style.transition = 'transform 0.5s ease';
+                    currentIndex--;
+                    updateCarousel();
+                }, 50);
+            } else {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // Transición automática
+        setInterval(nextSlide, 5000);
+
+        // Iniciar animaciones cuando se carga la página
+        window.addEventListener('load', () => {
+            animatePoints();
+            setupCarousel();
+        });
+
+        // Ajustar el carrusel si cambia el tamaño de la ventana
+        window.addEventListener('resize', setupCarousel);
+    </script>
+</body>
+</html>

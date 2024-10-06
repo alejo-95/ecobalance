@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoBalance</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../static/style/styleMenu.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <i class="bx bxl-codepen"></i>
+                <span>EcoBalance</span>
+            </div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <div class="sidebar-content">
+            <div class="user">
+                <img src="../static/images/images.jpg" alt="" class="user-img" />
+                <div>
+                    <p class="bold">Hola</p>
+                    <p>Admin</p>:
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="nav-item">Dashboard</span>
+                    </a>
+                    <span class="tooltip">Dashboard</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-shopping-bag"></i>
+                        <span class="nav-item">Products</span>
+                    </a>
+                    <span class="tooltip">Products</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-list-check"></i>
+                        <span class="nav-item">Categories</span>
+                    </a>
+                    <span class="tooltip">Categories</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-food-menu"></i>
+                        <span class="nav-item">Orders</span>
+                    </a>
+                    <span class="tooltip">Orders</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-body"></i>
+                        <span class="nav-item">Customers</span>
+                    </a>
+                    <span class="tooltip">Customers</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-location-plus"></i>
+                        <span class="nav-item">Shipping</span>
+                    </a>
+                    <span class="tooltip">Shipping</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bx-cog"></i>
+                        <span class="nav-item">Settings</span>
+                    </a>
+                    <span class="tooltip">Settings</span>
+                </li>
+                <li>
+                    <a href="/logout">
+                        <i class="bx bx-log-out"></i>
+                        <span class="nav-item">Salir</span>
+                    </a>
+                    <span class="tooltip">Salir</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+
+            <body>
+                <header>
+                    <div class="container">
+                        <div class="header-content">
+                            <div class="logo-container">
+                                <img src="/placeholder.svg?height=100&width=100" alt="Logo del Programa de Lealtad"
+                                    class="logo">
+                            </div>
+                            <div class="header-text">
+                                <h1>Programa de Lealtad</h1>
+                                <p>¡Gana puntos y obtén descuentos exclusivos!</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="container">
+                    <div class="points-container">
+                        <h2>Tus Puntos Acumulados</h2>
+                        <div class="points" id="pointsDisplay">5,250</div>
+                        <p>¡Sigue acumulando para obtener más beneficios!</p>
+                    </div>
+
+                    <div class="carousel-container">
+                        <button class="carousel-arrow carousel-arrow-left" id="prevBtn">&lt;</button>
+                        <div class="carousel" id="carousel">
+                            <div class="card">
+                                <img src="/placeholder.svg?height=200&width=300" alt="Descuento en Restaurantes">
+                                <h3>20% de descuento en Restaurantes</h3>
+                                <p>Válido en restaurantes seleccionados</p>
+                            </div>
+                            <div class="card">
+                                <img src="/placeholder.svg?height=200&width=300" alt="Descuento en Cines">
+                                <h3>2x1 en Entradas de Cine</h3>
+                                <p>Disfruta del mejor entretenimiento</p>
+                            </div>
+                            <div class="card">
+                                <img src="/placeholder.svg?height=200&width=300" alt="Descuento en Viajes">
+                                <h3>15% de descuento en Viajes</h3>
+                                <p>Explora nuevos destinos por menos</p>
+                            </div>
+                            <div class="card">
+                                <img src="/placeholder.svg?height=200&width=300" alt="Descuento en Compras">
+                                <h3>10% de descuento en Compras Online</h3>
+                                <p>En tiendas seleccionadas</p>
+                            </div>
+                        </div>
+                        <button class="carousel-arrow carousel-arrow-right" id="nextBtn">&gt;</button>
+                    </div>
+
+                    <div class="video-container">
+                        <h2>Descubre Cómo Funciona Nuestro Programa</h2>
+                        <video width="720" height="405" controls>
+                            <source src="/placeholder-video.mp4" type="video/mp4">
+                            Tu navegador no soporta el tag de video.
+                        </video>
+                    </div>
+
+                    <div class="alternating-content">
+                        <div class="content-row">
+                            <div class="content-text">
+                                <h2>Beneficios Exclusivos</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                            <div class="content-image">
+                                <img src="/placeholder.svg?height=300&width=400" alt="Beneficios Exclusivos">
+                            </div>
+                        </div>
+                        <div class="content-row">
+                            <div class="content-text">
+                                <h2>Acumula Puntos Fácilmente</h2>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="content-image">
+                                <img src="/placeholder.svg?height=300&width=400" alt="Acumula Puntos">
+                            </div>
+                        </div>
+                        <div class="content-row">
+                            <div class="content-text">
+                                <h2>Canjea Tus Recompensas</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                            <div class="content-image">
+                                <img src="/placeholder.svg?height=300&width=400" alt="Canjea Recompensas">
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <footer>
+                    <div class="container">
+                        <div class="footer-content">
+                            <div class="footer-section">
+                                <h2>Sobre Nosotros</h2>
+                                <p>Somos un programa de lealtad comprometido con ofrecer los mejores beneficios a
+                                    nuestros usuarios.</p>
+                            </div>
+                            <div class="footer-section">
+                                <h2>Enlaces Rápidos</h2>
+                                <ul>
+                                    <li><a href="#">Inicio</a></li>
+                                    <li><a href="#">Cómo Funciona</a></li>
+                                    <li><a href="#">Beneficios</a></li>
+                                    <li><a href="#">Preguntas Frecuentes</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-section">
+                                <h2>Contacto</h2>
+                                <ul>
+                                    <li>Email: info@programadelealtad.com</li>
+                                    <li>Teléfono: (123) 456-7890</li>
+                                    <li>Dirección: Calle Principal 123, Ciudad</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Programa de Lealtad. Todos los derechos reservados.</p>
+                        </div>
+                    </div>
+                </footer>
+
+                <script>
+
+                </script>
+            </body>
+
+
+        </div>
+    </div>
+
+    <script>
+        let btn = document.querySelector('#btn');
+        let sidebar = document.querySelector('.sidebar');
+
+        btn.onclick = function () {
+            sidebar.classList.toggle('active');
+        };
+
+        // Animación de puntos
+        function animatePoints() {
+            let currentPoints = 0;
+            const targetPoints = 5250;
+            const duration = 2000; // 2 segundos
+            const interval = 20; // Actualizar cada 20ms
+            const increment = targetPoints / (duration / interval);
+            const pointsDisplay = document.getElementById('pointsDisplay');
+
+            const timer = setInterval(() => {
+                currentPoints += increment;
+                if (currentPoints >= targetPoints) {
+                    clearInterval(timer);
+                    currentPoints = targetPoints;
+                }
+                pointsDisplay.textContent = Math.round(currentPoints).toLocaleString();
+            }, interval);
+        }
+
+        // Carrusel infinito mejorado
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+        let cardWidth;
+        let carouselWidth;
+        let totalCards;
+
+        function setupCarousel() {
+            const cards = carousel.children;
+            totalCards = cards.length;
+            cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginRight);
+            carouselWidth = cardWidth * totalCards;
+
+            // Clonar todas las tarjetas y añadirlas al final
+            for (let i = 0; i < totalCards; i++) {
+                const clone = cards[i].cloneNode(true);
+                carousel.appendChild(clone);
+            }
+
+            // Ajustar el ancho del carrusel
+            carousel.style.width = `${carouselWidth * 2}px`;
+
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const offset = -currentIndex * cardWidth;
+            carousel.style.transform = `translateX(${offset}px)`;
+
+            // Si llegamos al final del conjunto original, reiniciar sin transición
+            if (currentIndex >= totalCards) {
+                setTimeout(() => {
+                    carousel.style.transition = 'none';
+                    currentIndex = 0;
+                    updateCarousel();
+                    setTimeout(() => {
+                        carousel.style.transition = 'transform 0.5s ease';
+                    }, 50);
+                }, 500);
+            }
+        }
+
+        function nextSlide() {
+            currentIndex++;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            if (currentIndex === 0) {
+                currentIndex = totalCards - 1;
+                carousel.style.transition = 'none';
+                updateCarousel();
+                setTimeout(() => {
+                    carousel.style.transition = 'transform 0.5s ease';
+                    currentIndex--;
+                    updateCarousel();
+                }, 50);
+            } else {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // Transición automática
+        setInterval(nextSlide, 5000);
+
+        // Iniciar animaciones cuando se carga la página
+        window.addEventListener('load', () => {
+            animatePoints();
+            setupCarousel();
+        });
+
+        // Ajustar el carrusel si cambia el tamaño de la ventana
+        window.addEventListener('resize', setupCarousel);
+    </script>
+
+</body>
+
+
+
+</html>
