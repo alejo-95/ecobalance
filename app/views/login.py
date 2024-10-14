@@ -23,9 +23,9 @@ def login():
             session['logueado'] = True
             session['ididusers']= account['idusers']
             session['idprofile'] = account['idprofile']
-            #session['cliente'] = account['cliente']
+            # session['docNum'] = account['docNum']
             return render_template("views/menu3.html")
         
         else:
             flash('El usuario y/o la contraseña son incorrectos', 'danger')
-            return render_template('index.html')
+            return render_template('index.html', loginMessage=True)

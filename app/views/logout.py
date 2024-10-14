@@ -6,4 +6,4 @@ bp = Blueprint('logout', __name__,)
 def logout():
     session.clear()
     flash('Te has desconectado con exito', 'success')
-    return render_template('index.html')
+    return render_template('index.html', loginMessage=True)

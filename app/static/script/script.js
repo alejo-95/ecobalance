@@ -103,3 +103,9 @@ window.addEventListener('load', () => {
 
 // Ajustar el carrusel si cambia el tamaño de la ventana
 window.addEventListener('resize', setupCarousel);
+
+//Abrir el modal
+
+// $(document).ready(function () {
+//     $('#userModal').modal('show');
+// });
