@@ -1,4 +1,4 @@
-from app.config.common import request, render_template, session, flash, Blueprint
+from app.config.common import  render_template, session, flash, Blueprint
 
 bp = Blueprint('logout', __name__,)
 

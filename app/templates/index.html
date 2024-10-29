@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <!-- Inicio modal -->
+    <!-- Inicio modal registro-->
     <div id="userModal" class="modal fade contmodal" role="dialog" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
@@ -25,13 +25,14 @@
                 </div>
 
                 <div class="input-box-modal">
-                    
+
                     <form action="/registerUser" method="POST">
                         <div class="modal-body" class="form-control form-login-register">
                             {% with messages = get_flashed_messages(with_categories=true) %}
                             {% if messages and registerUser %}
                             {% for category, message in messages %}
-                            <div class="alert custom-alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            <div class="alert custom-alert alert-{{ category }} alert-dismissible fade show"
+                                role="alert">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="close"></button>
                                 {{ message }}
@@ -40,8 +41,8 @@
                             {% endif %}
                             {% endwith %}
                             <div class="input-field">
-                                <input type="text" class="input" id="name" required="" autocomplete="on"
-                                    name="txtName" value="{{name}}">
+                                <input type="text" class="input" id="name" required="" autocomplete="on" name="txtName"
+                                    value="{{name}}">
                                 <label for="name">Nombres</label>
                             </div>
                             <div class="input-field">
@@ -55,8 +56,8 @@
                                 <label for="document">Documento</label>
                             </div>
                             <div class="input-field">
-                                <input type="mail" class="input" id="email" required="" autocomplete="on"
-                                    name="txtMail" value="{{email}}">
+                                <input type="mail" class="input" id="email" required="" autocomplete="on" name="txtMail"
+                                    value="{{email}}">
                                 <label for="email">Correo</label>
                             </div>
                             <div class="input-field">
@@ -81,13 +82,83 @@
 
                         </div>
                     </form>
-                    
+
                 </div>
 
             </div>
         </div>
     </div>
-    <!-- Fin modal -->
+    <!-- Fin modal registro -->
+
+    <!-- Inicio modal recuperación-->
+    <div id="passwordModal" class="modal fade contmodal" role="dialog" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <div class="modal-header no-border mb-1">
+                    <h5 class="modal-title text-secundary new_title">
+                        Por favor ingrese los campos solicitados para recuperar su contraseña
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" title="exit">
+                    </button>
+                </div>
+
+                <div class="input-box-modal">
+
+                    <form action="/forgot-password" method="POST">
+                        <div class="modal-body" class="form-control form-login-register">
+                            {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages and forgotMessages %}
+                            {% for category, message in messages %}
+                            <div class="alert custom-alert alert-{{ category }} alert-dismissible fade show"
+                                role="alert">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="close"></button>
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith %}
+                            
+                            <div class="input-field">
+                                <input type="mail" class="input" id="email" required="" autocomplete="on" name="txtPassMail"
+                                    value="">
+                                <label for="email">Correo</label>
+                            </div>
+                            
+                            {% if codeForm %}
+                            <div class="input-field">
+                                <input type="text" class="input" id="code" required="" autocomplete="off"
+                                    name="txtCode" value="">
+                                <label for="code">Código</label>
+                            </div>
+                            {% endif %}
+                            {% if changePassword %}
+                            <div class="input-field">
+                                <input type="password" class="input" id="pass" required="" name="txtPassword1" min="0"
+                                    max="9999" maxlength="4" value="">
+                                <label for="pass">Contraseña</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" class="input" id="pass" required="" name="txtPassword2" min="0"
+                                    max="9999" maxlength="4" value="">
+                                <label for="pass">Inrgese nuevamente la contraseña</label>
+                            </div>
+                            {% endif %}
+                            <div class="modal-footer no-border">
+                                <button class="cancel" data-bs-dismiss="modal" type="reset">Cancelar</button>
+                                <button class="submit" type="submit">Enviar</button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Fin modal recuperación de contraseña -->
 
     <div class="wrapper">
         <div class="container main">
@@ -113,7 +184,8 @@
                             {% with messages = get_flashed_messages(with_categories=true) %}
                             {% if messages and loginMessage%}
                             {% for category, message in messages %}
-                            <div class="alert custom-alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            <div class="alert custom-alert alert-{{ category }} alert-dismissible fade show"
+                                role="alert">
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="close"></button>
                                 {{ message }}
@@ -137,7 +209,9 @@
                             </div>
                             <div class="signin">
                                 <span>Aún no posees una cuenta? <a href="#" data-bs-toggle="modal"
-                                        data-bs-target="#userModal">Ingresa aquí</a></span>
+                                        data-bs-target="#userModal">Ingresa aquí</a></span><br>
+                                <span><a href="/forgot-password"  
+                                        class="signin">¿Olvidaste tu contraseña?</a></span>
                             </div>
                     </div>
                     </form>
@@ -152,6 +226,14 @@
         crossorigin="anonymous"></script>
     <script src="../../static/script/script.js"></script>
     {% if openModal %}
+    <script>
+        $(document).ready(function () {
+            $('#userModal').modal('show');
+        });
+    </script>
+    {% endif %}
+
+    {% if openModalPassword %}
     <script>
         $(document).ready(function () {
             $('#userModal').modal('show');

@@ -1,5 +1,5 @@
-from app.config.common import request, render_template, session, flash, Blueprint
-from app.db.conectiondb import mysql
+from app.config.common import request, render_template, session, flash, Blueprint, mysql
+from app.db.conectiondb import getConnection
 
 bp = Blueprint('login', __name__, url_prefix='/login')
 
@@ -11,13 +11,10 @@ def home():
 def login():
     
     if request.method == 'POST' and 'txtUser' in request.form and 'txtPassword' in request.form:
-        _correo = request.form['txtUser']
+        _email = request.form['txtUser']
         _password = request.form['txtPassword']
         
-        cur=mysql.connection.cursor()
-        cur.execute('SELECT * FROM users WHERE name = %s AND password = %s ',(_correo, _password,))
-        account = cur.fetchone()
-        cur.close()
+        account = userValidation(_email,_password)
         
         if account:
             session['logueado'] = True
@@ -29,3 +26,19 @@ def login():
         else:
             flash('El usuario y/o la contraseña son incorrectos', 'danger')
             return render_template('index.html', loginMessage=True)
+        
+def userValidation(email, password):
+    try:
+        connection = getConnection()
+        cur = connection.cursor(dictionary=True)
+        cur.execute('SELECT * FROM users WHERE name = %s AND password = %s', (email, password,))
+        user = cur.fetchone()
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        connection.rollback()
+    finally:
+        if cur:
+            cur.close()
+        if connection:
+            connection.close()
+    return user

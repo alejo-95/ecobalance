@@ -1,13 +1,13 @@
-from app.config.common import MySQL, Flask 
-
-mysql = MySQL()
+from app.config.common import mysql, config
     
-def getConnection(app):
-    app.config['MYSQL_HOST']='localhost'
-    app.config['MYSQL_USER']='root'
-    app.config['MYSQL_PASSWORD']='Alejodev1995'
-    app.config['MYSQL_DB']='ecobalance'
-    app.config['MYSQL_CURSORCLASS']='DictCursor'
+def getConnection():
+    connection = mysql.connector.connect(
+        host = config("MYSQL_HOST"),
+        user = config("MYSQL_USER"),
+        password = config("MYSQL_PASSWORD"),
+        database = config("MYSQL_DB"),
+    )
+    return connection
     
-    mysql.init_app(app)
+    
 
