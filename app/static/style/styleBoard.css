@@ -1,0 +1,28 @@
+.chart-container {
+    width: 1390px; /* Ajusta el ancho según tu preferencia */
+    height: 580px; /* Ajusta el alto según tu preferencia */
+    /*border: 1px solid #ddd; /* Añade un borde al contenedor */
+    box-shadow: 3px 3px 7px 2px rgba(0, 0, 0, .1); /* Agrega una sombra al contenedor */
+    margin: 20px auto;
+    -webkit-border-radius: 22px 22px 22px 17px;
+    -moz-border-radius: 22px 22px 22px 17px;
+    border-radius: 22px 22px 22px 17px; /* Centra el contenedor horizontalmente */
+}
+.chart-container h5{
+    color: #7b7b7b;
+}
+
+.rowcol {
+    width: 500px; /* Ajusta el ancho según tu preferencia */
+    height: 340px; /* Ajusta el alto según tu preferencia */
+    /*border: 1px solid #ddd; /* Añade un borde al contenedor */
+    box-shadow: 3px 3px 7px 2px rgba(0, 0, 0, .1); /* Agrega una sombra al contenedor */
+    margin: 20px 20px;
+    -webkit-border-radius: 22px 22px 22px 17px;
+    -moz-border-radius: 22px 22px 22px 17px;
+    border-radius: 22px 22px 22px 17px; /* Centra el contenedor horizontalmente */
+}
+
+.rowcol h5{
+    color: #7b7b7b;
+}

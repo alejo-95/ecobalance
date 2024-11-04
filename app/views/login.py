@@ -20,7 +20,7 @@ def login():
             session['logueado'] = True
             session['ididusers']= account['idusers']
             session['idprofile'] = account['idprofile']
-            # session['docNum'] = account['docNum']
+            session['name'] = account['name']
             return render_template("views/menu3.html")
         
         else:

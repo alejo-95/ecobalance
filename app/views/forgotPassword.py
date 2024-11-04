@@ -72,9 +72,6 @@ def reset_password():
         password2 = request.form['txtPassword2']
         user = request.form.get('user_name')
         
-        print('Usuario recuperado para guardar ok ok',user)
-        print('contraseña 1',password1, 'contraseña 2', password2)
-        
         if not passwordValidation(password1) or not passwordValidation(password2):
             flash('Las contraseñas no cumplen con los requisitos.', 'danger')
             return render_template('views/ressetPasword.html', resetMessage=True, user=user)
@@ -95,9 +92,6 @@ def reset_password():
     
     
     
-    
-    
-
 def sendEmail(email, code):
     user = config('EMAIL_USER')
     password = config('EMAIL_PASSWORD')

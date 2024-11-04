@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,7 +6,7 @@
 }
 
 
-.user-img{
+.user-img {
     width: 50px;
     border-radius: 100%;
     border: 1px solid #eee;
@@ -38,12 +38,12 @@
     border-radius: 6px;
 }
 
-.sidebar.active ~ .main-content{
+.sidebar.active~.main-content {
     left: 250px;
     width: calc(100% - 250px);
 }
 
-.sidebar.active{
+.sidebar.active {
     width: 250px;
 }
 
@@ -82,11 +82,11 @@
     cursor: pointer;
 }
 
-.sidebar.active #btn{
+.sidebar.active #btn {
     left: 90%;
 }
 
-.sidebar .top .logo{
+.sidebar .top .logo {
     color: #fff;
     display: flex;
     height: 50px;
@@ -100,33 +100,33 @@
     opacity: 1;
 }
 
-.top .logo i{
+.top .logo i {
     font-size: 2rem;
     margin-right: 5px;
 }
 
-.user{
+.user {
     display: flex;
     align-items: center;
     margin: 1rem 0;
     padding: 0.8rem;
 }
 
-.user p{
+.user p {
     color: #fff;
     opacity: 1;
     margin-left: 1rem;
 }
 
-.bold{
+.bold {
     font-weight: 600;
 }
 
-.sidebar p{
+.sidebar p {
     opacity: 0;
 }
 
-.sidebar.active p{
+.sidebar.active p {
     opacity: 1;
 }
 
@@ -140,7 +140,7 @@
     line-height: 50px;
 }
 
-.sidebar ul li a{
+.sidebar ul li a {
     color: #fff;
     display: flex;
     align-items: center;
@@ -148,12 +148,12 @@
     border-radius: 0.8rem;
 }
 
-.sidebar ul li a:hover{
+.sidebar ul li a:hover {
     background-color: #fff;
     color: #12171e;
 }
 
-.sidebar ul li a i{
+.sidebar ul li a i {
     min-width: 50px;
     text-align: center;
     height: 50px;
@@ -161,20 +161,20 @@
     line-height: 50px;
 }
 
-.sidebar .nav-item{
+.sidebar .nav-item {
     opacity: 0;
 }
 
-.sidebar.active .nav-item{
+.sidebar.active .nav-item {
     opacity: 1;
 }
 
-.sidebar ul li .tooltip{
+.sidebar ul li .tooltip {
     position: absolute;
     left: 125px;
     top: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0.5rem 0.8rem rgba(0,0,0,0.2);
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
     border-radius: .6rem;
     padding: .4rem 1.2rem;
     line-height: 1.8rem;
@@ -182,15 +182,15 @@
     opacity: 0;
 }
 
-.sidebar ul li:hover .tooltip{
+.sidebar ul li:hover .tooltip {
     opacity: 1;
 }
 
-.sidebar.active ul li .tooltip{
+.sidebar.active ul li .tooltip {
     display: none;
 }
 
-.main-content{
+.main-content {
     position: relative;
     background-color: #eee;
     min-height: 100vh;
@@ -198,9 +198,10 @@
     transition: all 0.5s ease;
     width: calc(100% - 80px);
     padding: 1rem;
-    max-width: 1800px; /* Añade esta línea para limitar el ancho máximo */
-    
-    
+    max-width: 1800px;
+    /* Añade esta línea para limitar el ancho máximo */
+
+
 }
 
 
@@ -322,7 +323,7 @@ h1 {
     width: 100%;
     border-radius: 5px;
     margin-bottom: 15px;
-    
+
 }
 
 .card h3 {
@@ -330,10 +331,10 @@ h1 {
     margin-bottom: 10px;
 }
 
-.card-description{
+.card-description {
     color: rgba(124, 108, 108, 0.623);
-    font-size: 15px; 
-    font-weight: 10px; 
+    font-size: 15px;
+    font-weight: 10px;
 }
 
 .carousel-arrow {
@@ -453,12 +454,51 @@ footer {
     border-top: 1px solid var(--text-color);
 }
 
+.chart-container {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.chart-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.chart-content {
+    padding: 15px;
+}
+
+.chart-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.charts-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    
+}
+
+.charts-row .chart-container {
+    flex: 1 1 48%;
+    max-width: 49%;
+}
+
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
     }
 
-    .content-row, .content-row:nth-child(even) {
+    .content-row,
+    .content-row:nth-child(even) {
         flex-direction: column;
     }
 
@@ -473,5 +513,7 @@ footer {
     .logo-container {
         margin-bottom: 20px;
     }
+    .charts-row {
+        flex-direction: column;
+    }
 }
-

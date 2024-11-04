@@ -11,7 +11,7 @@
 
 <body>
 
-    <div class="sidebar">
+    <div class="sidebar active">
         <div class="top">
             <div class="logo">
                 <i class="bx bxl-codepen"></i>
@@ -23,24 +23,25 @@
             <img src="../static/images/images.jpg" alt="" class="user-img" />
             <div>
                 <p class="bold">Hola</p>
-                <p>Admin</p>:
+                <p>{{ session['name'] }}</p>:
             </div>
         </div>
         <ul>
             <li>
-                <a href="#">
+                <a href="/ecobalance">
+                    <i class='bx bxs-home-smile'></i>
+                    <span class="nav-item">Inicio</span>
+                </a>
+                <!-- <span class="tooltip">Products</span> -->
+            </li>
+            <li>
+                <a href="/historico">
                     <i class="bx bxs-grid-alt"></i>
                     <span class="nav-item">Tablero</span>
                 </a>
                 <!-- <span class="tooltip">Dashboard</span> -->
             </li>
-            <li>
-                <a href="#">
-                    <i class="bx bxs-shopping-bag"></i>
-                    <span class="nav-item">Productos</span>
-                </a>
-                <!-- <span class="tooltip">Products</span> -->
-            </li>
+            
             <li>
                 <a href="#">
                     <i class="bx bx-list-check"></i>
